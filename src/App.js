@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import WelcomePage from './components/welcome-page/WelcomePage'
+import MainView from './components/main-view/MainView'
 
 function App() {
   return (
     <div className="App">
-      <WelcomePage></WelcomePage>
+      <MainView />
     </div>
   );
 }

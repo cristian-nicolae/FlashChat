@@ -1,21 +1,38 @@
 import "./WelcomePage.scss";
 import TextField from "@material-ui/core/TextField";
-function WelcomePage() {
+import React from "react";
+
+function WelcomePage(props) {
+
+  function submit(){
+
+    props.onBtnClick()
+  }
+
+  function enterSubmit(event){
+    if(event.code === "Enter" || event.code === "NumpadEnter")
+      submit();
+  }
+
   return (
     <div className="wp-container">
-      <div className="wp-title">Welcome to the chat</div>
+      <div className="wp-title">{props.title}</div>
       <div className="wp-form-cointainer">
-        <div className="wp-form-label">Enter the secret key:</div>
+        <div className="wp-form-label">{props.label}</div>
         <div>
           <TextField
             required
+            type={props.type}
             variant="outlined"
             id="wp-key-form"
-            placeholder="SAFEPASSWORD..."
+            value={props.text}
+            placeholder={props.placeholder}
+            onChange={(e) => props.setText(e.target.value)}
+            onKeyPress={enterSubmit}
           />
         </div>
       </div>
-      <button>Join now!</button>
+      <button onClick={submit}>Join now!</button>
     </div>
   );
 }
