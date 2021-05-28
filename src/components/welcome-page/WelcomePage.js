@@ -19,20 +19,18 @@ function WelcomePage(props) {
       <div className="wp-title">{props.title}</div>
       <div className="wp-form-cointainer">
         <div className="wp-form-label">{props.label}</div>
-        <div>
-          <TextField
-            required
-            type={props.type}
-            variant="outlined"
-            id="wp-key-form"
-            value={props.text}
-            placeholder={props.placeholder}
-            onChange={(e) => props.setText(e.target.value)}
-            onKeyPress={enterSubmit}
-          />
-        </div>
+        <TextField
+          required
+          type={props.type}
+          variant="outlined"
+          id="wp-key-form"
+          value={props.text}
+          placeholder={props.placeholder}
+          onChange={(e) => props.setText(e.target.value)}
+          onKeyPress={enterSubmit}
+        />
       </div>
-      <button onClick={submit}>Join now!</button>
+      <button className="wp-btn" onClick={submit}>Join now!</button>
     </div>
   );
 }

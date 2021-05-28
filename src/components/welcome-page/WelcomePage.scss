@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .wp-container{
     display: flex;
     flex-direction: column;
@@ -5,8 +7,34 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
 }
+
+.wp-title{
+    text-align: center;
+    font-size: 5em;
+    font-weight: 900;
+}
+
+.wp-btn{
+    background-color: $main-color;
+    font-size: 2.5em;
+    color: white;
+    border: none;
+    padding: 0.2em 1em;
+}
+
 #wp-key-form{
     color: white;
-    background-color: #5B5965;
+    background-color: $dark-color;
+}
+
+@media only screen and (max-width: 500px) {
+    .wp-title{
+        font-size: 3em;
+    }
+
+    .wp-btn{
+        font-size: 2em;
+    }
 }

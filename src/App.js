@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import MainView from './components/main-view/MainView'
 
 function App() {
