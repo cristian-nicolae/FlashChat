@@ -5,6 +5,7 @@ import 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Navbar from "../navbar/navbar";
 
+import './chat.scss';
 
 function Chat(props) {
 
@@ -16,7 +17,7 @@ function Chat(props) {
         // const firestore = firebase.firestore();
     })
     return (
-        <div>
+        <div className="chat">
             <Navbar nickname={props.nickname}></Navbar>
             Chat
         </div>
