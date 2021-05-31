@@ -6,7 +6,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Navbar from "../navbar/navbar";
 
 
-function Chat() {
+function Chat(props) {
 
     useEffect( ()=>{
         // firebase.initializeApp({
@@ -17,7 +17,7 @@ function Chat() {
     })
     return (
         <div>
-            <Navbar></Navbar>
+            <Navbar nickname={props.nickname}></Navbar>
             Chat
         </div>
     )
