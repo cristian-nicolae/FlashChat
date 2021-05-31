@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import Navbar from "../navbar/navbar";
 
 
 function Chat() {
@@ -15,7 +16,10 @@ function Chat() {
         // const firestore = firebase.firestore();
     })
     return (
-        <div>Chat</div>
+        <div>
+            <Navbar></Navbar>
+            Chat
+        </div>
     )
 }
 

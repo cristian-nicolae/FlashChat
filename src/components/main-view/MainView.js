@@ -43,7 +43,8 @@ function MainView(){
                 />
 
             case IDS.chat:
-                return <Chat />
+                return <Chat 
+                    nickname={nickname}/>
 
             default:
                 return <WelcomePage
