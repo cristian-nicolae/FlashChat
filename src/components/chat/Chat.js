@@ -8,19 +8,25 @@ import MessagesContainer from "./messages-container/MessagesContainer";
 
 function Chat(props) {
 
-    firebase.initializeApp({
-        apiKey: "AIzaSyAGDSdzZF4xDDtHulNeLJPeZcJth-hM5fE",
-        authDomain: "flashchat-dt.firebaseapp.com",
-        projectId: "flashchat-dt",
-        storageBucket: "flashchat-dt.appspot.com",
-        messagingSenderId: "509568857421",
-        appId: "1:509568857421:web:aeb6dad4e98a91a930b304",
-        measurementId: "G-0FWMQZTBBW"
-      })
+    if (!firebase.apps.length) {
+        firebase.initializeApp({
+            apiKey: "AIzaSyAGDSdzZF4xDDtHulNeLJPeZcJth-hM5fE",
+            authDomain: "flashchat-dt.firebaseapp.com",
+            projectId: "flashchat-dt",
+            storageBucket: "flashchat-dt.appspot.com",
+            messagingSenderId: "509568857421",
+            appId: "1:509568857421:web:6a205cb24e21c1f630b304",
+            measurementId: "G-FWS7VJH3WF"
+          })
+     }else {
+        firebase.app(); // if already initialized, use that one
+     }
+
+
       
     const firestore = firebase.firestore();
-    const messagesRef = firestore.collection('messages');
-    const query = messagesRef.orderBy('createdAt').limit(25);
+    const messagesCollection = firestore.collection('messages');
+    const query = messagesCollection.orderBy('createdAt').limit(25);
 
     const [messages] = useCollectionData(query, {idField: 'id'});
     const [navbarHeight, setNavbarHeight] = useState(0);
@@ -30,7 +36,7 @@ function Chat(props) {
 
     useEffect( ()=>{
         setNavbarHeight(navbarRef.current.getBoundingClientRect().height);
-    })
+    }, [])
 
     useEffect(()=> {
         messagesRef.current.style.height = `calc(100% - ${navbarHeight}px)`;
