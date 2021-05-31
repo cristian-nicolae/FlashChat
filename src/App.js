@@ -2,7 +2,7 @@ import './App.scss';
 import MainView from './components/main-view/MainView';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import {useCollectionData} from 'react-firebase-hooks/firestore';
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyAGDSdzZF4xDDtHulNeLJPeZcJth-hM5fE",
@@ -14,7 +14,7 @@ firebase.initializeApp({
   measurementId: "G-0FWMQZTBBW"
 })
 
-const firestore = firebase.firestore();
+
 
 function App() {
   return (
