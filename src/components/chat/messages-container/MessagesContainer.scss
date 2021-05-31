@@ -1,0 +1,11 @@
+@import '../../variables.scss';
+
+.messages-container {
+    display: grid;
+    grid-template-rows: auto max-content;
+    width: 100%;
+
+    .messages-list {
+        justify-self: center;
+    }
+}

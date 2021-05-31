@@ -20,6 +20,7 @@ function WelcomePage(props) {
       <div className="wp-form-cointainer">
         <div className="wp-form-label">{props.label}</div>
         <TextField
+          inputProps={{ maxLength: 12 }}
           required
           type={props.type}
           variant="outlined"
