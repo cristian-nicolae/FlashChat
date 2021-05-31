@@ -40,7 +40,6 @@ function Chat(props) {
 
     useEffect(()=> {
         messagesRef.current.style.height = `calc(100% - ${navbarHeight}px)`;
-        console.log(navbarHeight);
     }, [navbarHeight])
     
     return (
@@ -52,6 +51,9 @@ function Chat(props) {
             <MessagesContainer 
                 ref={messagesRef}
                 currentUserId={props.currentUserId}
+                nickname={props.nickname}
+                messages={messages}
+                messagesCollection={messagesCollection}
             />
         </div>
     )
