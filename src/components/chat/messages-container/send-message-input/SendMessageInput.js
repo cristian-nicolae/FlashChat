@@ -3,8 +3,8 @@ import "./SendMessageInput.scss";
 
 function SendMessageInput(props) {
   const [message, setMessage] = useState("");
-  var Filter = require('bad-words'),
-  filter = new Filter();
+  let Filter = require('bad-words');
+  let filter = new Filter();
 
 
   const sendMessage = async (e) => {
