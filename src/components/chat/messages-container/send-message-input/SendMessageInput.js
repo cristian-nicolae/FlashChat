@@ -3,13 +3,14 @@ import "./SendMessageInput.scss";
 
 function SendMessageInput(props) {
   const [message, setMessage] = useState("");
-  
+  var Filter = require('bad-words'),
+  filter = new Filter();
+
 
   const sendMessage = async (e) => {
     e.preventDefault();
-
     await props.messagesCollection.add({
-      content: message,
+      content: filter.clean(message),
       userName: props.nickname,
       userId: props.userId,
       createdAt: Date.now(),
