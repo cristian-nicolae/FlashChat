@@ -10,6 +10,9 @@ function MainView(){
     const [nickname, setNickname] = useState('');
     const [userId, setUserId] = useState('');
 
+    let Filter = require("bad-words");
+    let filter = new Filter();
+
     let checkPasscode = () => {
         return passcode === 'pass'
     }
@@ -22,7 +25,9 @@ function MainView(){
     }
 
     let checkNickname = () => {
-        return nickname.length > 0;
+
+        let valid = nickname.length > 0 && !filter.isProfane(nickname);
+        return valid;
     }
 
     let nicknameOnClick = () =>{
