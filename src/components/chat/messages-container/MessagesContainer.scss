@@ -6,6 +6,9 @@
     width: 100%;
 
     .messages-list {
+        display: flex;
+        overflow: auto;
+        flex-direction: column-reverse;
         justify-self: center;
     }
 }

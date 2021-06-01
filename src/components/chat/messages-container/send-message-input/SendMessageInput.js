@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import "./SendMessageInput.scss";
 
 function SendMessageInput(props) {
   const [message, setMessage] = useState("");
+  
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ function SendMessageInput(props) {
       createdAt: Date.now(),
     });
     setMessage("");
+
   };
 
   function enterSubmit(event) {
