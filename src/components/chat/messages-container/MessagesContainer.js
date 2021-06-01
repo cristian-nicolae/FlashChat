@@ -23,7 +23,6 @@ const MessagesContainer = React.forwardRef((props, ref) => {
         messagesCollection={props.messagesCollection}
         userId={props.currentUserId}
         nickname={props.nickname}
-        dummy={dummy}
       />
     </div>
   );
