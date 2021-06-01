@@ -21,8 +21,9 @@ function SendMessageInput(props) {
 
   };
 
-  function enterSubmit(event) {
-    if (event.code === "Enter" || event.code === "NumpadEnter") sendMessage(event);
+  function enterSubmit(e) {
+    if(e.key === "Enter" || e.key === "NumpadEnter")
+      sendMessage(e);
   }
 
   return (

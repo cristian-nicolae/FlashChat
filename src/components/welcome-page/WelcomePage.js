@@ -9,8 +9,8 @@ function WelcomePage(props) {
     props.onBtnClick()
   }
 
-  function enterSubmit(event){
-    if(event.code === "Enter" || event.code === "NumpadEnter")
+  function enterSubmit(e){
+    if(e.key === "Enter" || e.key === "NumpadEnter")
       submit();
   }
 

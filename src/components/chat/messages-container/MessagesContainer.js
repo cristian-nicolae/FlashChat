@@ -15,6 +15,7 @@ const MessagesContainer = React.forwardRef((props, ref) => {
               userId={message.userId}
               userName={message.userName}
               content={message.content}
+              messageId={message.id}
             />
           ))}
       </div>
