@@ -9,8 +9,10 @@ function SendMessageInput(props) {
 
   const sendMessage = async (e) => {
     e.preventDefault();
+    let content = /[a-zA-Z]/g.test(message) ? filter.clean(message) : message;
+
     await props.messagesCollection.add({
-      content: filter.clean(message),
+      content: content,
       userName: props.nickname,
       userId: props.userId,
       createdAt: Date.now(),
