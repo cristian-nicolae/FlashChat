@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.messages-container {
+    display: grid;
+    grid-template-rows: auto max-content;
+    width: 100%;
+
+    .messages-list {
+        display: flex;
+        overflow: auto;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-self: center;
+        width:100%;
+        margin-top: 1rem;
+    }
+}

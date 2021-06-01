@@ -1,0 +1,47 @@
+@import '../../../variables.scss';
+
+.single-message{
+    justify-self: center;
+    width: 96%;
+    display: flex;
+}
+
+.sent-message{
+    margin-left: auto;
+    background-color: $main-color;
+    width: max-content;
+    max-width: 35%;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+}
+
+.received-message{
+    margin-top: 0.5rem;
+    width: 35%;
+    &-content{
+        background-color: $dark-blue;
+        width: max-content;
+        max-width: 100%;
+        padding: 1rem;
+        border-radius: 6px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .sent-message{
+        max-width: 50%;
+    }
+    .received-message{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sent-message{
+        max-width: 75%;
+    }
+    .received-message{
+        width: 75%;
+    }
+}

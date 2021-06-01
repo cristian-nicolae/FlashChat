@@ -1,0 +1,69 @@
+@import '../../../variables.scss';
+
+.send-message {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    justify-self: center;
+    margin: 2rem 0;
+
+    .input-message {
+        width: 85%;
+        background-color: $dark-color;        
+        border: none;
+        color: #FFFFFF;
+        
+        
+        padding-left: 1.2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        
+        &::placeholder {
+            color: #FFFFFF;
+        }
+        
+        &:focus {
+            outline: none;
+        }
+        
+    }
+    
+    .send-message-input {
+        padding: 0.6rem 0;
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $dark-color;        
+
+        &:hover {
+            cursor: pointer;
+            .send-message-button {
+                background-color: $main-color;
+            }
+        }
+        
+        .send-message-button {
+            mask: url("./Vector.svg") no-repeat center;
+            mask-size: 2rem;
+            width: 2rem;
+            height: 2rem;
+            background-color: #FFFFFF;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .send-message {
+        margin: 1.5rem 0;
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .send-message {
+        margin: 1rem 0;
+        width: 85%;
+    }
+}

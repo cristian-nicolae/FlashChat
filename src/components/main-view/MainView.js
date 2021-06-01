@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import WelcomePage from '../welcome-page/WelcomePage';
 import {IDS, PASSCODE_PAGE, NICKNAME_PAGE} from '../../utils/pages';
 import Chat from '../chat/Chat';
+import {v4} from 'uuid';
 
 function MainView(){
     const [page, setPage] = useState('');
     const [passcode, setPasscode] = useState('');
     const [nickname, setNickname] = useState('');
+    const [userId, setUserId] = useState('');
 
     let checkPasscode = () => {
         return passcode === 'pass'
@@ -29,7 +31,13 @@ function MainView(){
         setPage(IDS.chat);
     }
 
-    let renderComponents = () => {
+    let addUser = (text) => {
+        setUserId(v4());
+        setNickname(text);
+    } 
+
+    let renderComponents = () => { 
+
         switch(page){
             case IDS.nickname:
                 return <WelcomePage
@@ -38,12 +46,15 @@ function MainView(){
                     type={NICKNAME_PAGE.type}
                     placeholder={NICKNAME_PAGE.placeholder}
                     text={nickname}
-                    setText={setNickname}
+                    setText={addUser}
                     onBtnClick={nicknameOnClick}
                 />
 
             case IDS.chat:
-                return <Chat />
+                return <Chat 
+                    nickname={nickname}
+                    currentUserId={userId}
+                    />
 
             default:
                 return <WelcomePage

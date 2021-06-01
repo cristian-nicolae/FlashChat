@@ -1,5 +1,5 @@
 import './App.scss';
-import MainView from './components/main-view/MainView'
+import MainView from './components/main-view/MainView';
 
 function App() {
   return (
